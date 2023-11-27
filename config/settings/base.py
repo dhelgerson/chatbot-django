@@ -22,6 +22,7 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -31,6 +32,10 @@ INSTALLED_APPS = [
     # local apps
     "chat",
 ]
+
+# add asgi app
+ASGI_APPLICATION = "config.asgi.application"
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
