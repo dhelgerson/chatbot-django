@@ -36,6 +36,16 @@ INSTALLED_APPS = [
     "theme",
 ]
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [config("REDIS_BACKEND")],
+        },
+    },
+}
+
+
 # add asgi app
 ASGI_APPLICATION = "config.asgi.application"
 
